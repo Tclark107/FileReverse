@@ -21,7 +21,7 @@ class FileReverse{
         PrintWriter out = null;
         String line = null;
         String[] token = null;
-        int i, n, lineNumber = 0;
+        int i, n;
 
         // check number of command line arguments is at least 2
         if(args.length < 2){
@@ -34,7 +34,6 @@ class FileReverse{
         out = new PrintWriter(new FileWriter(args[1]));
         // read lines from in, extract and print tokens from each line
         while( in.hasNextLine() ){
-        lineNumber++;
 
         // trim leading and trailing spaces, then add one trailing space so
         // split works on blank lines
@@ -45,7 +44,6 @@ class FileReverse{
 
         // print out tokens
         n = token.length;
-        //out.println("Line " + lineNumber + " contains " + n + " tokens:");
         for(i=0; i<n; i++){
             out.println(stringReverse(token[i],token[i].length()));
     }
